@@ -17,6 +17,6 @@ spec:
       containers:
       - name: shopping-app
         image: testingacr001.azurecr.io/shopping:latest
-        imagepullpolicy: Always
+        imagePullPolicy: Always
         ports:
         - containerPort: 8070
