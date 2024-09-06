@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shopping-app
+  name: shopping-deployment
   labels:
-    app: shopping
+    app: shopping-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shopping
+      app: shopping-app
   template:
     metadata:
       labels:
-        app: shopping
+        app: shopping-app
     spec:
       containers:
-      - name: shopping-container
+      - name: shopping-app
         image: testingacr001.azurecr.io/shopping:latest
+        imagepullpoliy: Always
         ports:
         - containerPort: 8070
